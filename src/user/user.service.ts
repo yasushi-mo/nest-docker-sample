@@ -15,11 +15,11 @@ export class UserService {
     email: string,
     password: string,
   ): Promise<User> {
-    const createdUser = new User();
-    createdUser.name = name;
-    createdUser.email = email;
-    createdUser.password = password;
-    return await this.userRepository.save(createdUser);
+    const user = new User();
+    user.name = name;
+    user.email = email;
+    user.password = password;
+    return await this.userRepository.save(user);
   }
 
   async getAllUsers(): Promise<User[]> {
@@ -36,17 +36,17 @@ export class UserService {
     email: string,
     password: string,
   ): Promise<User> {
-    const updatedUser = await this.getUserById(id);
+    const user = await this.getUserById(id);
 
-    if (!updatedUser) {
+    if (!user) {
       throw new Error('User not found');
     }
 
-    updatedUser.name = name;
-    updatedUser.email = email;
-    updatedUser.password = password;
+    user.name = name;
+    user.email = email;
+    user.password = password;
 
-    return await this.userRepository.save(updatedUser);
+    return await this.userRepository.save(user);
   }
 
   async deleteUser(id: number): Promise<void> {
