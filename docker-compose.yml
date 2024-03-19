@@ -5,10 +5,10 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: your_password
-      MYSQL_DATABASE: your_database_name
-      MYSQL_USER: your_username
-      MYSQL_PASSWORD: your_password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: nest_app_db
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
     ports:
       - '3306:3306'
 
