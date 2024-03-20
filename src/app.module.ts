@@ -8,7 +8,7 @@ import { UserController } from './user/user.controller';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'nest-docker-sample-db-1', // Docker Compose service name
+      host: 'db', // Docker Compose service name
       port: 3306,
       username: 'username',
       password: 'password',
